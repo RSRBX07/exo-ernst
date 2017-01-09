@@ -14,6 +14,6 @@ puts age_secondes
 
 #calcul l'age en secondes avec date d'anniversaire
 today= Time.now.to_i
-anniversaire =Time.new(1985,2,16,8,0,0).to_i
+anniversaire =Time.new(1985,2,16,8,0,0).to_i    # ou Time.new "16/02/1985"
 age_sec=today-anniversaire
 puts age_sec
