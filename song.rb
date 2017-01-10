@@ -27,4 +27,4 @@ Car la route est longue.
 Allongeons la jambe, la jambe
 Car la route est longue.
 =end
-for n in (30..0)
+for n in (0..30)
