@@ -4,8 +4,7 @@
 
 #puts nombres.sort
 
-Array.new (49) 
-pickin_balls= array.new.Shuffle.Take(5).sort
+Bag = (1..49) pickin_balls= Shuffle.Take(5).sort
 puts "le tirage est : #{pickin_balls}"
 
 #affichage de la gagnotte
