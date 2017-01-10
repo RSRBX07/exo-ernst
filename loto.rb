@@ -3,3 +3,7 @@
 nombres= [rand(1..45),rand(1..45),rand(1..45),rand(1..45),rand(1..45)]
 
 puts nombres.sort
+
+Array.new (49) 
+pickin_balls= array.new.Shuffle.Take(5).sort
+puts "le tirage est : #{pickin_balls}"
