@@ -9,7 +9,6 @@ puts faces
 
 def roll()
     hasard =  rand 1..6
-    return hasard
 end
 
 puts "votre face est le #{roll}"
