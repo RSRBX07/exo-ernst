@@ -4,7 +4,8 @@
 
 #puts nombres.sort
 
-Bag = (1..49)to pickin_balls= Shuffle.Take(5).sort
+Bag = (1..49).to_a
+pickin_balls= bag.shuffle.take(5).sort
 puts "le tirage est : #{pickin_balls}"
 
 #affichage de la gagnotte
