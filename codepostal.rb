@@ -16,6 +16,6 @@ city= gets.chomp
 codepostal=  codes_postaux[city] 
 
 puts city , codepostal
-#puts "Le code postal de #{""} est #{""}"
+
 
 
