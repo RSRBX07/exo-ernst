@@ -1,10 +1,12 @@
 #taper vos 5 numeros entre 1, 49 
+puts "tape un chiffre"
 
-puts " tape 5 nuemros entre 1 et 49"
-num = gets.chomps
 
-puts "vos numeros sont #{num}"
+def in_french digit
+    ["zero" ,"un", "deux" ,"trois" ,"quatre" ,"cinq" ,"six" , "sept" , "huit", "neuf"][digit] 
+end
 
-bag= (1..49) to_a
-pickin_balls= bag.shuffle.take(5).sort
+digit=gets.to_i
+
+puts in_french digit
 
