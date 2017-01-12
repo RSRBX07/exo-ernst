@@ -38,8 +38,10 @@ puts "tape un chiffre"
 
 
 def in_french index
-   chiffre= ["zero" ,"un", "deux" ,"trois" ,"quatre" ,"cinq" ,"six" , "sept" , "huit", "neuf"]
-    chiffre[index] 
+   chiffre= ["zero" ,"un", "deux" ,"trois" ,"quatre" ,"cinq" ,"six" , "sept" , "huit", "neuf" ][index]
+   chiffres_dix= ["dix" , "onze" , "douze" , "treize", "quatorze", "quinze", "seize" , "dix-sept", "dix-huit" , "dix-neuf"]
+   chiffres_dizaine = [ ,, "vingt" , "trente", "quarante" , "cinquante", "soixante" , "soixante", "quatre-vingt" , "quatre-vingt"]
+     
 end
 
 index=gets.to_i
