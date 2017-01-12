@@ -1,3 +1,4 @@
+
 #creer un tableau (array) [], array.new
 #faces = [1,2,3,4,5,6]
 #puts faces
@@ -16,6 +17,7 @@ def roll_cheated cheated_value
 end
 puts "votre face est le #{roll}"
 puts "votre face est le #{roll}  "
+
 =end
 #methode avec ou sans des cheated 
 
@@ -30,6 +32,7 @@ def roll (cheated_value = nil)
     end
 end
 puts "votre lancée est #{roll 5}"
+
 
 
 
