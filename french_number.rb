@@ -2,22 +2,47 @@
 #-qui prend une instance de fixnum en argument
 #-retourne la chaine de caractere du nombre ecrit en toute lettre en francais
 
-puts "tape un chiffre de 0 à 9"
-keep = gets.chomp
-def fixnum
-     chiffres = {
-    0: zero     
-    1: un,
-    2: deux
-    3: trois
-    4: quatre
-    5: cinq
-    6: six
-    7: sept
-    8: huit
-     9: neuf 
-    }
-return chiffres if 
 
-
+def in_french num
+    case num
+    when 0
+     "zero"     
+    when 1
+     "un"
+    when 2
+     "deux"
+    when 3
+     "trois"
+    when 4
+     "quatre"
+    when 5
+     "cinq"
+    when 6
+    "six"
+    when 7
+     "sept"
+    when 8
+     "huit"
+    when 9
+        "neuf"
+    else 
+        nil
+    end
 end
+
+puts in_french 5
+# => "cinq"
+
+
+puts "tape un chiffre"
+
+
+def in_french index
+   chiffre= ["zero" ,"un", "deux" ,"trois" ,"quatre" ,"cinq" ,"six" , "sept" , "huit", "neuf"]
+    chiffre[index] 
+end
+
+index=gets.to_i
+
+puts in_french 5
+# => "toto"
