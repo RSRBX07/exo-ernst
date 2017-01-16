@@ -22,7 +22,11 @@ puts "votre face est le #{roll}  "
 #methode avec ou sans des cheated 
 
 
-def roll (cheated_value = nil)
+
+puts "votre lancée est #{roll 5}"
+
+class Dice
+    def self.roll (cheated_value = nil)
     # si cheated_value return cheated_value
     if cheated_value
          cheated_value
@@ -31,9 +35,6 @@ def roll (cheated_value = nil)
          rand 1..6
     end
 end
-puts "votre lancée est #{roll 5}"
-
-class Dice
 
 end
 
