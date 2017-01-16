@@ -33,7 +33,9 @@ def roll (cheated_value = nil)
 end
 puts "votre lancée est #{roll 5}"
 
+class dice
 
+end
 
 
 
