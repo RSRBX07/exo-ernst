@@ -28,11 +28,8 @@ class Loto
   # pour le loto courant
   def validate_grid grid
   #verifier qu'un tirage n'as pas encore eu lieu 
-  if @picked_balls.to_a.empty?
-    end
-
+  if @picked_balls.to_a.empty?  end
     # @saved_grids ||= []
-
     @saved_grids = @saved_grids || []
     @saved_grids.push grid
   end 
