@@ -1,9 +1,8 @@
 
-require './loto.rb'
+require './lotov2.rb'
 
-my_loto = Loto.new
-grid = loto.get_grid
-loto.check_grid grid 
+my_loto = Lotov2.new
+
 
 
 

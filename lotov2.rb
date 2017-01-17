@@ -1,5 +1,5 @@
 require 'date'
-class Loto
+class Lotov2
 
   def self.get_grid
     grid = []
@@ -8,10 +8,6 @@ class Loto
       grid << input
     end
     grid
-  end
-
-  def self.get_flash
-    (1..45).to_a.shuffle.take 5
   end
 
   def has_winner?
@@ -28,7 +24,8 @@ class Loto
   # pour le loto courant
   def validate_grid grid
   #verifier qu'un tirage n'as pas encore eu lieu 
-  if @picked_balls.to_a.empty?  end
+  if @picked_balls.to_a.empty?
+  end
     # @saved_grids ||= []
     @saved_grids = @saved_grids || []
     @saved_grids.push grid
@@ -41,27 +38,18 @@ class Loto
   def vendredi_13?
     Date.today.day == 13 && Date.today.friday?
   end
-
-  
-
-  def prize
-    cagnote = if vendredi_13?
-        2_000_000
-      else
-        100_000
-      end
-    puts "Le montant de la cagnote du jour est de #{cagnote}"
-    cagnote
+def self.get_flash
+    (1..45).to_a.shuffle.take 5
   end
+  
+  
 
   def draw
     available_balls = (1..45).to_a
     # shuffle balls and take 5
     # @picked_balls ||= available_balls.shuffle.take(5)
-    @picked_balls = @picked_balls || available_balls.shuffle.take 5
-
+    @picked_balls = @picked_balls || available_balls.shuffle.take(5)
     puts "Le tirage du jour est : #{@picked_balls.sort}" 
-    @picked_balls
   end
 
   def check_grid grid
@@ -71,6 +59,17 @@ class Loto
     else
       puts "You loose !"
     end
+private
+  def prize
+    cagnote = if vendredi_13?
+        2_000_000
+      else
+        100_000
+      end
+    puts "Le montant de la cagnote du jour est de #{cagnote}"
+    cagnote
+  end
+    
   end
   
-end
+end 
