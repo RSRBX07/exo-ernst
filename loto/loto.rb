@@ -3,12 +3,11 @@ require 'date'
 class Loto
 # decouverte des attributs 
   attr_reader :picked_balls
-  attr_writer :picked_balls
 
 #initialize decouverte
 def initialize
-puts " on initialise une instance de loto"
-picked_balls = []
+  puts " on initialise une instance de loto"
+  @picked_balls = []
 end
 
 #retourne un array avec es 5 chiffres choisi par le joueur 
@@ -23,7 +22,7 @@ end
 
 #definit une methode de class pour faire un flash de loto 
   def self.get_flash
-    (1..45).to_a.shuffle.take 5
+    #(1..45).to_a.shuffle.take 5
 end
 
 #defini une methode d'instance pour verifie si un gagnant ou un perdant
@@ -40,9 +39,9 @@ def has_winner?
   # enregistre une grille
   # pour le loto courant
   def validate_grid grid
-  #verifier qu'un tirage n'as pas encore eu lieu 
-  if @picked_balls.to_a.empty?
-  end
+    #verifier qu'un tirage n'as pas encore eu lieu 
+    if @picked_balls.to_a.empty?
+    end
     # @saved_grids ||= [] autre ecriture 
     @saved_grids = @saved_grids || []
     @saved_grids.push grid
@@ -51,13 +50,13 @@ def has_winner?
   end 
 
 #definit le le tirage 
-  def draw 
-    available_balls = (1..45).to_a
-    # shuffle balls and take 5
-    # @picked_balls ||= available_balls.shuffle.take(5)
-    @picked_balls = @picked_balls || available_balls.shuffle.take(5)
-    puts "Le tirage du jour est : #{@picked_balls.sort}" 
-  end
+  # def draw 
+  #   available_balls = (1..45).to_a
+  #   # shuffle balls and take 5
+  #   # @picked_balls ||= available_balls.shuffle.take(5)
+  #   @picked_balls = @picked_balls || available_balls.shuffle.take(5)
+  #   puts "Le tirage du jour est : #{@picked_balls.sort}" 
+  # end
 
 
   
