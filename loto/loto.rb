@@ -3,7 +3,14 @@ require 'date'
 class Loto
   attr_reader :picked_balls
   attr_writer :picked_balls
+#initialize decouverte
+def initialize
+puts " on initialise une instance de loto"
+@picked_balls = []
 
+end
+
+#retourne un array avec es 5 chiffres choisi par le joueur 
   def self.get_grid
     grid = []
     5.times do
@@ -13,16 +20,10 @@ class Loto
     grid
   end
 
-  def draw 
-    available_balls = (1..45).to_a
-    # shuffle balls and take 5
-    # @picked_balls ||= available_balls.shuffle.take(5)
-    @picked_balls = @picked_balls || available_balls.shuffle.take(5)
-    puts "Le tirage du jour est : #{@picked_balls.sort}" 
-  end
-
-
-  def has_winner?
+  def self.get_flash
+    (1..45).to_a.shuffle.take 5
+end
+def has_winner?
     #comparer tous les bulletins valides avec la grille gagnante
     sorted_draw = draw.sort
     @saved_grids.each do |grid|
@@ -32,7 +33,7 @@ class Loto
     return false
   end
 
-  # enregistre une grille
+   # enregistre une grille
   # pour le loto courant
   def validate_grid grid
   #verifier qu'un tirage n'as pas encore eu lieu 
@@ -44,6 +45,19 @@ class Loto
    
       puts"trop tard"
   end 
+
+  def draw 
+    available_balls = (1..45).to_a
+    # shuffle balls and take 5
+    # @picked_balls ||= available_balls.shuffle.take(5)
+    @picked_balls = @picked_balls || available_balls.shuffle.take(5)
+    puts "Le tirage du jour est : #{@picked_balls.sort}" 
+  end
+
+
+  
+
+ 
   # demander une grille de jeu
 
   # affichage du montant de la cagnote
@@ -52,9 +66,7 @@ class Loto
   def vendredi_13?
     Date.today.day == 13 && Date.today.friday?
   end
-def self.get_flash
-    (1..45).to_a.shuffle.take 5
-end
+
  
   def check_grid grid
     # afficher si gagne ou perdu
