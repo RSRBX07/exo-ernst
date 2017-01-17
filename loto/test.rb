@@ -1,6 +1,6 @@
 #loto 
 #test tirage 5 nombres de loto
-require './loto/loto.rb'
+require './loto.rb'
 
 my_loto = Loto.new
 puts my_loto.methods.inspect
