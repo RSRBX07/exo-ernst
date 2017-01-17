@@ -1,5 +1,8 @@
 require 'date'
-class Lotov2
+
+class Loto
+  attr_reader :picked_balls
+  attr_writer :picked_balls
 
   def self.get_grid
     grid = []
@@ -10,8 +13,17 @@ class Lotov2
     grid
   end
 
+  def draw 
+    available_balls = (1..45).to_a
+    # shuffle balls and take 5
+    # @picked_balls ||= available_balls.shuffle.take(5)
+    @picked_balls = @picked_balls || available_balls.shuffle.take(5)
+    puts "Le tirage du jour est : #{@picked_balls.sort}" 
+  end
+
+
   def has_winner?
-    #comprer tous les bulletins valides avec la grille gagnante
+    #comparer tous les bulletins valides avec la grille gagnante
     sorted_draw = draw.sort
     @saved_grids.each do |grid|
       sorted_grid = grid.sort
@@ -29,6 +41,8 @@ class Lotov2
     # @saved_grids ||= []
     @saved_grids = @saved_grids || []
     @saved_grids.push grid
+   
+      puts"trop tard"
   end 
   # demander une grille de jeu
 
@@ -40,18 +54,8 @@ class Lotov2
   end
 def self.get_flash
     (1..45).to_a.shuffle.take 5
-  end
-  
-  
-
-  def draw
-    available_balls = (1..45).to_a
-    # shuffle balls and take 5
-    # @picked_balls ||= available_balls.shuffle.take(5)
-    @picked_balls = @picked_balls || available_balls.shuffle.take(5)
-    puts "Le tirage du jour est : #{@picked_balls.sort}" 
-  end
-
+end
+ 
   def check_grid grid
     # afficher si gagne ou perdu
     if grid.sort == draw.sort
@@ -59,7 +63,8 @@ def self.get_flash
     else
       puts "You loose !"
     end
-private
+
+
   def prize
     cagnote = if vendredi_13?
         2_000_000
