@@ -1,11 +1,16 @@
-require './vehicule.rb'
+require_relative './vehicule'
 #creation de la class
-class Plane
+class Plane < Vehicule
   #attribut de flying
   attr_reader :flying
+  
+
 #initialiser la variable d'instance
   def initialize
-    @flying = false
+    super
+    @flying = true
+  
+
   end
   #methode decoller 
   def takeoff
@@ -16,4 +21,7 @@ class Plane
   @flying = false
   end
   
+
 end
+airbus = Plane.new
+puts airbus.out_of_order.inspect
