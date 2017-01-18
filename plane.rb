@@ -1,3 +1,4 @@
+require './vehicule.rb'
 #creation de la class
 class Plane
   #attribut de flying
