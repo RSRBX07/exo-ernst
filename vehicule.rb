@@ -1,4 +1,14 @@
+require 'file'
+#creation de la classe counter
 class counter 
+  def add_one
+    
+  end
+
+  def value
+   fil.open "/.tmp/counter.txt", "r" do |counter_file|
+   counter_file.each_line {|line|line} 
+  end
   
 end
 #creation de la classe vehicule
@@ -6,6 +16,10 @@ class Vehicule
   #attribut de position
   attr_reader :position
   attr_reader :out_of_order
+
+  def initialize
+    puts
+  end
 
 #retourne the number of eixting objects(in_memory)
 #open irb
