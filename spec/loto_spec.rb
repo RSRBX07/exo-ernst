@@ -1,6 +1,6 @@
 #loto 
 #test tirage 5 nombres de loto
-require './loto/loto.rb'
+require_relative '../lib/loto/loto.rb'
 
 RSpec.describe Loto do 
   xit 'gets grids' do 
