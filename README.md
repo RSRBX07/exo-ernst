@@ -1,4 +1,8 @@
+
 # README
+add link test cicle
+[![CircleCI](https://circleci.com/gh/RSRBX07/exo-ernst.svg?style=svg)](https://circleci.com/gh/RSRBX07/exo-ernst)
+
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
