@@ -1,4 +1,5 @@
 class Game < ApplicationRecord
+  
   def add_player
     @players += 1
     
