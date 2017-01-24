@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ game: 'Star Wars' }, { game: 'Lord of the Rings' }])
 #   Character.create(game: 'Luke', movie: movies.first)
-
+Game.destroy_all
 Game.create [
   {name:"Loto du lundi", description:"tirage du loto 15, 20, 23, 24, 45", players: 98745612 }, 
   {name:"loto du mardi",description:"tirage du loto 15, 20, 23, 24, 45", players: 98745612 },
