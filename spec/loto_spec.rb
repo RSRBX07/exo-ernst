@@ -1,6 +1,6 @@
 #loto 
 #test tirage 5 nombres de loto
-require './loto/loto.rb'
+require_relative '../lib/loto/loto.rb'
 
 RSpec.describe Loto do 
   xit 'gets grids' do 
@@ -22,23 +22,20 @@ RSpec.describe Loto do
    # expect(loto_draw).to eql loto.draw (peut etre mis en com)
   end
 
-  xit 'validate  a grid register this grid'
+  xit 'validate  a grid register this grid' do
 
-  loto= Loto.new
-grid = [1,2,3,4,5]
-  validate_grids = loto.validate_grid grid 
-  expect(validated_grids).to include grid
+    loto= Loto.new
+    grid = [1,2,3,4,5]
+    validated_grids = loto.validate_grid grid 
+    expect(validated_grids).to include grid
+  end
   
+  it 'reject grid validation after draw' do
+    loto.draw
+    validate_grids = loto.validate_grid grid 
+      expect(validated_grids).not_to include grid
+  end
 end
-it 'reject grid validation after draw'
-loto.draw
-validate_grids = loto.validate_grid grid 
-  expect(validated_grids).not_to include grid
-
-
-
-
-
 
 
 
